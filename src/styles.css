@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: "Avenir Next Pro", Arial;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #F9F5F1;
+    width: 100vw; 
+}
+
+
+.tableCampagne {
+    padding: 1.5rem;
+    background-color: white;
+}
+
+.rowCampagne tr td {
+    padding: 1rem;
+}
+
+.underlineCampagne {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    border-bottom: solid #2A7A93;
+}
+
+.pipe {
+    padding: 1rem;
+    color:darkgray;
+}
+
+.btnNewCampagne {
+    margin-left: 2rem;
+}
+
+.selectDate {
+    margin-right: 1rem;
+}
+
+.searchHeader {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.test {
+    width: 80vw;
+}
+
+.nameProfil {
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.titlePage {
+    font-weight: bold;
+}
+
+.btnTable {
+    background-color: #2A7A93;
+    color: white;
+    margin: 0.15rem;
+}
+
+.btnKeyWord {
+    margin: 0.5rem;
+    margin-left: 0rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.actives {
+    background-color: rgba(42, 122, 147, 0.15);;
+    color: #2A7A93;
+    font-weight: bold;
+}

@@ -6,8 +6,81 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+    function myFunction() {
+      var input, filter, tbody, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      tbody = document.getElementById("myTBody");
+      tr = tbody.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
+    }
+
+
+    let letterList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    let numberOfItems = 5;
+    let first = 0;
+    let actualPage = 1;
+    let maxPages = Math.ceil(letterList.length / numberOfItems );
+
+    showList();
+
+    function showList(){
+      // alert("aze");
+      let tableList = "";
+      for(let i = first; i < numberOfItems + first;i++){
+        console.log(i);
+        if(i<letterList.length){
+          tableList += `
+          <tr>
+            <td>${letterList[i]}</td>
+          </tr>
+        `  
+        }
+      }
+      document.getElementById("letterList").innerHTML=tableList;
+      showPageInfo();
+      }
+      
+      function nextPage(){
+      if(first+numberOfItems<=letterList.length){
+      first+=numberOfItems;
+      actualPage ++;
+      showList();
+      }
+    }
+
+    function previous(){
+      if(first-numberOfItems >= 0){
+        first-=numberOfItems
+        actualPage --;
+        showList();
+      }
+    }
+    
+    function showPageInfo(){
+      document.getElementById('pageInfo').innerHTML = `
+        ${actualPage} / ${maxPages}
+      `
+    }
+  </script>
+
 </body>
 </html>
